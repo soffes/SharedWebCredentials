@@ -24,27 +24,31 @@ Start by importing the framework:
 import SharedWebCredential
 ```
 
-Get registered credentials:
+### Retrieve Credentials
+
+The system will show its own UI for letting the user choose which account they want to use to sign into the app. The result will be a `Credential` struct or `nil`.
 
 ``` swift
-Store.get { credentials, error in
-    if let error = error {
-        print("Something went wrong: \(error)")
-    }
-
-    for credential in credentials {
+Store.get { credential, error in
+    if let credential = credential {
         print("Username: \(credential.account), Password: \(credential.password)")
     }
+
+    print("Error: \(error)")
 }
 ```
 
-Add a new password:
+It will automatically use any of the domains you have set in your `com.apple.developer.associated-domains` entitlement. You can optionally specify the `domain` argument to pick a specific one.
+
+
+### Adding a New Credential
 
 ``` swift
 Store.add(domain: "myapp.com", account: "steve", password: "password")
 ```
 
-Remove a password:
+
+### Removing a Credential
 
 ``` swift
 Store.remove(domain: "myapp.com", account: "steve")

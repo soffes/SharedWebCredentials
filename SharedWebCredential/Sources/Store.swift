@@ -26,7 +26,7 @@ public struct Store {
 	/// - parameter credentials: Array of credentials or `nil`.
 	/// - parameter error: System error or `nil`.
 	///
-	public typealias ReadCompletion = (_ credentials: [Credential], _ error: CFError?) -> Void
+	public typealias ReadCompletion = (_ credential: Credential?, _ error: CFError?) -> Void
 
 	///
 	/// Completion block for writing to shared web credentials.
@@ -57,8 +57,8 @@ public struct Store {
 	///                shared credentials which are available for the site, allowing the caller to discover an existing
 	///                account.
 	///
-	///     - completion: A block which will be called to deliver the requested credentials. If no matching items were
-	///                   found, the credentials array will be empty, and the CFErrorRef parameter will provide the
+	///     - completion: A block which will be called to deliver the requested credential. If no matching items were
+	///                   found, the credential array will be `nil`, and the CFErrorRef parameter will provide the
 	///                   error result.
 	///
 	public static func get(domain: String? = nil, account: String? = nil, completion: @escaping ReadCompletion) {
@@ -66,15 +66,15 @@ public struct Store {
 		let cfAccount = account.flatMap { $0 as CFString }
 
 		SecRequestSharedWebCredential(cfDomain, cfAccount) { array, error in
-			let credentials: [Credential]
+			let credential: Credential?
 
-			if let array = array as Array? {
-				credentials = array.flatMap({ $0 as? NSDictionary }).flatMap(Credential.init)
+			if let array = array as Array?, let dictionary = array.first as? NSDictionary {
+				credential = Credential(dictionary: dictionary)
 			} else {
-				credentials = []
+				credential = nil
 			}
 
-			completion(credentials, error)
+			completion(credential, error)
 		}
 	}
 
