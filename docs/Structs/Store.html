@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Store Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Store" class="dashAnchor"></a>
+    <a title="Store Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/soffes/SharedWebCredentials"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fsoffes%2Egithub%2Eio%2FSharedWebCredentials%2Fdocsets%2F%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Store Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Credential.html">Credential</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Store.html">Store</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Store</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Store</span></code></pre>
+
+                </div>
+              </div>
+            <p>Shared Web Credentials Store.</p>
+
+<p>Supports reading, adding, and removing shared web credentials. There is also a utility method for generating a new
+password.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Types"></a>
+                <a name="//apple_ref/swift/Section/Types" class="dashAnchor"></a>
+                <a href="#/Types">
+                  <h3 class="section-name">Types</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V20SharedWebCredentials5Store14ReadCompletion"></a>
+                    <a name="//apple_ref/swift/Alias/ReadCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V20SharedWebCredentials5Store14ReadCompletion">ReadCompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Completion block for reading from shared web credentials.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If the error is <code>nil</code>, the array will not be empty.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">ReadCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">credential</span><span class="p">:</span> <span class="kt"><a href="../Structs/Credential.html">Credential</a></span><span class="p">?,</span> <span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">CFError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>credentials</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Array of credentials or <code>nil</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>System error or <code>nil</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L29">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:V20SharedWebCredentials5Store15WriteCompletion"></a>
+                    <a name="//apple_ref/swift/Alias/WriteCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V20SharedWebCredentials5Store15WriteCompletion">WriteCompletion</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Completion block for writing to shared web credentials.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>If the error is <code>nil</code>, the operation was a success.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">WriteCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">CFError</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>System error or <code>nil</code>.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Accessing%20Shared%20Web%20Credentials"></a>
+                <a name="//apple_ref/swift/Section/Accessing Shared Web Credentials" class="dashAnchor"></a>
+                <a href="#/Accessing%20Shared%20Web%20Credentials">
+                  <h3 class="section-name">Accessing Shared Web Credentials</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV20SharedWebCredentials5Store3getFT6domainGSqSS_7accountGSqSS_10completionFTGSqVS_10Credential_GSqCSo7CFError__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/get(domain:account:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV20SharedWebCredentials5Store3getFT6domainGSqSS_7accountGSqSS_10completionFTGSqVS_10Credential_GSqCSo7CFError__T__T_">get(domain:account:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronously obtain one or more shared passwords for a website.</p>
+
+<p>This function requests one or more shared passwords for a given website, depending on whether the optional
+account parameter is supplied. To obtain results, the website specified in the fqdn parameter must be one which
+matches an entry in the calling application’s <code>com.apple.developer.associated-domains</code> entitlement.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    
+</div>
+
+<p>The system API <code>SecRequestSharedWebCredential</code> returns an array of <code>CFDictionary</code> objects for each result. In
+practice, you only ever get one dictionary in this array. The system UI shows all of the credentials you have
+saved, but makes you select just one. The one you select is the contents of the results array.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">account</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Structs/Store.html#/s:V20SharedWebCredentials5Store14ReadCompletion">ReadCompletion</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>domain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Fully qualified domain name of the website for which passwords are being requested. If <code>nil</code> is passed in this argument, the domain name(s) listed in the calling application’s <code>com.apple.developer.associated-domains</code> entitlement are searched implicitly.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Account name for which passwords are being requested. The account may be <code>nil</code> to request all shared credentials which are available for the site, allowing the caller to discover an existing account.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block which will be called to deliver the requested credential. If no matching items were found, the credential array will be <code>nil</code>, and the CFErrorRef parameter will provide the error result.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L70-L85">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV20SharedWebCredentials5Store3addFT6domainSS7accountSS8passwordSS10completionGSqFGSqCSo7CFError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/add(domain:account:password:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV20SharedWebCredentials5Store3addFT6domainSS7accountSS8passwordSS10completionGSqFGSqCSo7CFError_T___T_">add(domain:account:password:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronously store (or update) a shared password for a website.</p>
+
+<p>This function adds a shared password item which will be accessible by Safari and applications that have the
+specified fully-qualified domain name in their <code>com.apple.developer.associated-domains</code> entitlement. If a shared
+password item already exists for the specified website and account, it will be updated with the provided
+password.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Note:</p>
+
+<p>Since a request involving shared web credentials may potentially require user interaction or other
+verification to be approved, this function is dispatched asynchronously; your code provides a completion
+handler that will be called once the results (if any) are available.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">account</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Structs/Store.html#/s:V20SharedWebCredentials5Store15WriteCompletion">WriteCompletion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>domain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fully qualified domain name of the website requiring the password.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The account name associated with this password.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The password to be stored.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block which will be invoked when the function has completed. If the shared password was successfully added, the CFErrorRef parameter passed to the block will be <code>nil</code>. If the error parameter is non-nil, an error occurred and the error reference will hold the result.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L114-L118">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV20SharedWebCredentials5Store6removeFT6domainSS7accountSS10completionGSqFGSqCSo7CFError_T___T_"></a>
+                    <a name="//apple_ref/swift/Method/remove(domain:account:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV20SharedWebCredentials5Store6removeFT6domainSS7accountSS10completionGSqFGSqCSo7CFError_T___T_">remove(domain:account:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Asynchronously remove a shared password for a website.</p>
+
+<p>This function remove a shared password item which will be accessible by Safari and applications that have the
+specified fully-qualified domain name in their <code>com.apple.developer.associated-domains</code> entitlement.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <p>Note:</p>
+
+<p>Since a request involving shared web credentials may potentially require user interaction or other
+verification to be approved, this function is dispatched asynchronously; your code provides a completion
+handler that will be called once the results (if any) are available.</p>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">account</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt"><a href="../Structs/Store.html#/s:V20SharedWebCredentials5Store15WriteCompletion">WriteCompletion</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>domain</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The fully qualified domain name of the website requiring the password.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>account</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The account name associated with this password.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A block which will be invoked when the function has completed. If the shared password was successfully removed, the CFErrorRef parameter passed to the block will be <code>nil</code>. If the error parameter is non-nil, an error occurred and the error reference will hold the result.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L143-L147">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Generating%20Passwords"></a>
+                <a name="//apple_ref/swift/Section/Generating Passwords" class="dashAnchor"></a>
+                <a href="#/Generating%20Passwords">
+                  <h3 class="section-name">Generating Passwords</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV20SharedWebCredentials5Store16generatePasswordFT_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/generatePassword()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV20SharedWebCredentials5Store16generatePasswordFT_GSqSS_">generatePassword()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a randomly generated password.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">generatePassword</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Optional <code>String</code> password in the form <code>xxx-xxx-xxx-xxx</code> where <code>x</code> is taken from the sets <code>&quot;abcdefghkmnopqrstuvwxy&quot;</code>, <code>&quot;ABCDEFGHJKLMNPQRSTUVWXYZ&quot;</code>, <code>&quot;3456789&quot;</code> with at least one character from each set being present or <code>nil</code> if it failed.</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/soffes/SharedWebCredentials/tree/v0.1.0/SharedWebCredentials/Sources/Store.swift#L161-L163">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://soff.es" target="_blank" rel="external">Sam Soffes</a>. All rights reserved. (Last updated: 2017-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/soffes/SharedWebCredentials"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fsoffes%2Egithub%2Eio%2FSharedWebCredentials%2Fdocsets%2F%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html"> Reference</a>
+        <img id="carat" src="img/carat.png" />
+          Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/Credential.html">Credential</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Store.html">Store</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <a href='#sharedwebcredentials' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='sharedwebcredentials'>SharedWebCredentials</h1>
+
+<p><a href="https://github.com/soffes/SharedWebCredentials/releases"><img src="https://img.shields.io/github/release/soffes/SharedWebCredentials.svg" alt="Version"></a>
+<img src="https://img.shields.io/badge/swift-3.0.2-orange.svg" alt="Swift Version">
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a></p>
+
+<p>Swift library for easily working with Shared Web Credentials for iOS with <a href="https://github.com/carthage/carthage">Carthage</a> support.</p>
+
+<p>Released under the <a href="LICENSE">MIT license</a>. Enjoy.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+
+<p><a href="https://github.com/carthage/carthage">Carthage</a> is the recommended way to install SharedWebCredentials. Add the following to your Cartfile:</p>
+<pre class="highlight ruby"><code><span class="n">github</span> <span class="s2">"soffes/SharedWebCredentials"</span>
+</code></pre>
+<a href='#prerequisites' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='prerequisites'>Prerequisites</h2>
+
+<p>To use Shared Web Credentials, you’ll need to setup the proper entitlements and an associated domain. Here’s <a href="https://developer.apple.com/reference/security/shared_web_credentials">documentation</a> on how to do that.</p>
+
+<p>Be sure you don’t miss:</p>
+
+<blockquote>
+<p>If your app runs in iOS 9 and later and you use HTTPS to serve the file, you can create a plain text file that uses the application/json MIME type and you don’t need to sign it.</p>
+</blockquote>
+
+<p>All of that signing stuff is a real pain. If you are targeting iOS 9 or later, you can skip this step!</p>
+
+<p>Once you get all of that stuff setup, you can use this framework instead of the Security framework to access the credentials in a Swift-friendly way.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>Start by importing the framework:</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">SharedWebCredentials</span>
+</code></pre>
+<a href='#retrieve-credentials' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='retrieve-credentials'>Retrieve Credentials</h3>
+
+<p>The system will show its own UI for letting the user choose which account they want to use to sign into the app. The result will be a <code>Credential</code> struct or <code>nil</code>.</p>
+<pre class="highlight swift"><code><span class="kt">Store</span><span class="o">.</span><span class="k">get</span> <span class="p">{</span> <span class="n">credential</span><span class="p">,</span> <span class="n">error</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">credential</span> <span class="o">=</span> <span class="n">credential</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Username: </span><span class="se">\(</span><span class="n">credential</span><span class="o">.</span><span class="n">account</span><span class="se">)</span><span class="s">, Password: </span><span class="se">\(</span><span class="n">credential</span><span class="o">.</span><span class="n">password</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>It will automatically use any of the domains you have set in your <code>com.apple.developer.associated-domains</code> entitlement. You can optionally specify the <code>domain</code> argument to pick a specific one.</p>
+<a href='#adding-a-new-credential' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='adding-a-new-credential'>Adding a New Credential</h3>
+<pre class="highlight swift"><code><span class="kt">Store</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"myapp.com"</span><span class="p">,</span> <span class="nv">account</span><span class="p">:</span> <span class="s">"steve"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"password"</span><span class="p">)</span>
+</code></pre>
+<a href='#removing-a-credential' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='removing-a-credential'>Removing a Credential</h3>
+<pre class="highlight swift"><code><span class="kt">Store</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">domain</span><span class="p">:</span> <span class="s">"myapp.com"</span><span class="p">,</span> <span class="nv">account</span><span class="p">:</span> <span class="s">"steve"</span><span class="p">)</span>
+</code></pre>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://soff.es" target="_blank" rel="external">Sam Soffes</a>. All rights reserved. (Last updated: 2017-03-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
