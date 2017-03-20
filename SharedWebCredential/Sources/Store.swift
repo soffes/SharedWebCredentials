@@ -8,6 +8,12 @@
 
 import Security
 
+///
+/// Shared Web Credentials Store.
+///
+/// Supports reading, adding, and removing shared web credentials. There is also a utility method for generating a new
+/// password.
+///
 public struct Store {
 
 	// MARK: - Types

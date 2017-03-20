@@ -16,3 +16,36 @@ Released under the [MIT license](LICENSE). Enjoy.
 ``` ruby
 github "soffes/SharedWebCredential"
 ```
+
+## Usage
+Start by importing the framework:
+
+``` swift
+import SharedWebCredential
+```
+
+Get registered credentials:
+
+``` swift
+Store.get { credentials, error in
+    if let error = error {
+        print("Something went wrong: \(error)")
+    }
+
+    for credential in credentials {
+        print("Username: \(credential.account), Password: \(credential.password)")
+    }
+}
+```
+
+Add a new password:
+
+``` swift
+Store.add(domain: "myapp.com", account: "steve", password: "password")
+```
+
+Remove a password:
+
+``` swift
+Store.remove(domain: "myapp.com", account: "steve")
+```
