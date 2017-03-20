@@ -6,6 +6,8 @@
 
 Swift library for easily working with Shared Web Credentials for iOS with [Carthage](https://github.com/carthage/carthage) support.
 
+**[Read the documentation](https://soffes.github.io/SharedWebCredentials/).**
+
 Released under the [MIT license](LICENSE). Enjoy.
 
 
@@ -68,3 +70,5 @@ Store.add(domain: "myapp.com", account: "steve", password: "password")
 ``` swift
 Store.remove(domain: "myapp.com", account: "steve")
 ```
+
+**[Read the full documentation](https://soffes.github.io/SharedWebCredentials/).**
