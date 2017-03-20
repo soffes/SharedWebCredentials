@@ -1,6 +1,6 @@
-# SharedWebCredential
+# SharedWebCredentials
 
-[![Version](https://img.shields.io/github/release/soffes/SharedWebCredential.svg)](https://github.com/soffes/SharedWebCredential/releases)
+[![Version](https://img.shields.io/github/release/soffes/SharedWebCredentials.svg)](https://github.com/soffes/SharedWebCredentials/releases)
 ![Swift Version](https://img.shields.io/badge/swift-3.0.2-orange.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
@@ -11,10 +11,10 @@ Released under the [MIT license](LICENSE). Enjoy.
 
 ## Installation
 
-[Carthage](https://github.com/carthage/carthage) is the recommended way to install SharedWebCredential. Add the following to your Cartfile:
+[Carthage](https://github.com/carthage/carthage) is the recommended way to install SharedWebCredentials. Add the following to your Cartfile:
 
 ``` ruby
-github "soffes/SharedWebCredential"
+github "soffes/SharedWebCredentials"
 ```
 
 
@@ -36,7 +36,7 @@ Once you get all of that stuff setup, you can use this framework instead of the 
 Start by importing the framework:
 
 ``` swift
-import SharedWebCredential
+import SharedWebCredentials
 ```
 
 ### Retrieve Credentials

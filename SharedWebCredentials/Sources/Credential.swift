@@ -1,6 +1,6 @@
 //
 //  Credential.swift
-//  SharedWebCredential
+//  SharedWebCredentials
 //
 //  Created by Sam Soffes on 3/20/17.
 //  Copyright © 2017 Sam Soffes. All rights reserved.
