@@ -17,7 +17,22 @@ Released under the [MIT license](LICENSE). Enjoy.
 github "soffes/SharedWebCredential"
 ```
 
+
+## Prerequisites
+
+To use Shared Web Credentials, you’ll need to setup the proper entitlements and an associated domain. Here’s [documentation](https://developer.apple.com/reference/security/shared_web_credentials) on how to do that.
+
+Be sure you don’t miss:
+
+> If your app runs in iOS 9 and later and you use HTTPS to serve the file, you can create a plain text file that uses the application/json MIME type and you don’t need to sign it.
+
+All of that signing stuff is a real pain. If you are targeting iOS 9 or later, you can skip this step!
+
+Once you get all of that stuff setup, you can use this framework instead of the Security framework to access the credentials in a Swift-friendly way.
+
+
 ## Usage
+
 Start by importing the framework:
 
 ``` swift
