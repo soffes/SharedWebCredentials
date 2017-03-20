@@ -47,6 +47,12 @@ public struct Store {
 	/// account parameter is supplied. To obtain results, the website specified in the fqdn parameter must be one which
 	/// matches an entry in the calling application’s `com.apple.developer.associated-domains` entitlement.
 	///
+	/// - Note:
+	///
+	/// The system API `SecRequestSharedWebCredential` returns an array of `CFDictionary` objects for each result. In
+	/// practice, you only ever get one dictionary in this array. The system UI shows all of the credentials you have
+	/// saved, but makes you select just one. The one you select is the contents of the results array.
+	///
 	/// - Parameters:
 	///
 	///     - domain: Fully qualified domain name of the website for which passwords are being requested. If `nil` is
